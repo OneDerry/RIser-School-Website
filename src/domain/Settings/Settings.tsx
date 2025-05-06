@@ -1,0 +1,12 @@
+import Applayout from "../../appLayout/Applayout";
+import Sdisplay from "./Sdisplay";
+
+export default function Settings() {
+  return (
+    <div>
+      <Applayout>
+        <Sdisplay />
+      </Applayout>
+    </div>
+  );
+}
