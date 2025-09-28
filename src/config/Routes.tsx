@@ -1,32 +1,16 @@
-// import Dashboard from "../LoginDashboard/Dashboarditems/Dashboard";
-// import Home from "../HomePage/Home";
-// import Mypage from "../LoginDashboard/MypageItems/Mypage";
-// import Appearance from "../LoginDashboard/Apperance/Appearance";
-// import Activity from "../LoginDashboard/Activity/Activity";
-// import Users from "../LoginDashboard/Users/Users";
-// import Settings from "../LoginDashboard/Settings/Settings";
-// import Pocket from "../LoginDashboard/Pocket/Pocket";
-// import WeatherView from "../LoginDashboard/Weather/view";
-
+/* eslint-disable react-refresh/only-export-components */
+import { lazy, Suspense } from "react";
 import { RouteObject } from "react-router-dom";
-import Home from "../website/home";
-import EnrollmentPage from "../website/enrollPage";
-import SchoolPaymentForm from "../website/payment_form";
-import Baselayout from "../appLayout/baseLayout";
-import FAQSection from "../website/faq";
+import Baselayout from "../app_layout/baseLayout";
+import Applayout from "../app_layout/Applayout";
+import { Loading } from "../ui/components/loaders";
 
-// export const Routes = createBrowserRouter([
-//   { path: "/", element: <Home /> },
-//   { path: '/login'} element,
-//   { path: "/dashboard", element: <Dashboard /> },
-//   { path: "/mypage", element: <Mypage /> },
-//   { path: "/appearance", element: <Appearance /> },
-//   { path: "/activity", element: <Activity /> },
-//   { path: "/users", element: <Users /> },
-//   { path: "/settings", element: <Settings /> },
-//   { path: "/pocket", element: <Pocket /> },
-//   { path: "/weather", element: <WeatherView /> },
-// ]);
+const Home = lazy(() => import("../website/home"));
+const EnrollmentPage = lazy(() => import("../website/enrollPage"));
+const SchoolPaymentForm = lazy(() => import("../website/payment-form"));
+const FAQSection = lazy(() => import("../website/faq"));
+const LoginForm = lazy(() => import("../domain/auth/components/login-form"));
+const SignUpForm = lazy(() => import("../domain/auth/components/sign_up"));
 
 export default function appRouter(): RouteObject[] {
   return [
@@ -36,12 +20,58 @@ export default function appRouter(): RouteObject[] {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: (
+            <Suspense fallback={<Loading />}>
+              <Home />
+            </Suspense>
+          ),
         },
-        { path: "/login", element: <EnrollmentPage /> },
-        { path: "/form", element: <SchoolPaymentForm /> },
-        {path: 'faq', element: <FAQSection/>}
+        {
+          path: "/enroll",
+          element: (
+            <Suspense fallback={<Loading />}>
+              <EnrollmentPage />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/form",
+          element: (
+            <Suspense fallback={<Loading />}>
+              <SchoolPaymentForm />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/login",
+          element: (
+            <Suspense fallback={<Loading />}>
+              <LoginForm />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/signup",
+          element: (
+            <Suspense fallback={<Loading />}>
+              <SignUpForm />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/faq",
+          element: (
+            <Suspense fallback={<Loading />}>
+              <FAQSection />
+            </Suspense>
+          ),
+        },
       ],
+    },
+    {
+      path: "admin",
+      element: <Applayout />,
+      children: [],
     },
   ];
 }

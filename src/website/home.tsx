@@ -1,12 +1,18 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useState, lazy, Suspense } from "react";
 
 import { Hero } from "./landing";
-import Cards from "./Cards";
-import AboutUs from "./AboutUs";
-import Admissions from "./Admissions";
-import Facilities from "./Facilities";
-import WhatOthersThink from "./what_others_think";
+
+const Cards = lazy(() => import("./cards"));
+const AboutUs = lazy(() => import("./about-us"));
+const Admissions = lazy(() => import("./admissions"));
+const Facilities = lazy(() => import("./facilities"));
+const WhatOthersThink = lazy(() => import("./what-others-think"));
+
+const SectionLoader = () => (
+  <div className="flex items-center justify-center py-20">
+    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+  </div>
+);
 
 
 export default function Home() {
@@ -28,11 +34,25 @@ export default function Home() {
     <main id="main">
       <Hero />
 
-      <AboutUs />
-      <Facilities />
-      <Admissions />
-      <Cards />
-      <WhatOthersThink />
+      <Suspense fallback={<SectionLoader />}>
+        <AboutUs />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <Facilities />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <Admissions />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <Cards />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <WhatOthersThink />
+      </Suspense>
     </main>
   );
 }

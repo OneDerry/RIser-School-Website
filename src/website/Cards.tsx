@@ -14,7 +14,13 @@ import {
   useMotionValue,
 } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ChevronRight, X, Maximize2, ExternalLink, Binoculars } from "lucide-react";
+import {
+  ChevronRight,
+  X,
+  Maximize2,
+  ExternalLink,
+  Binoculars,
+} from "lucide-react";
 import { cn } from "../lib/utils";
 
 interface GalleryItem {
@@ -32,7 +38,7 @@ const ImmsersiveGallery = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const springConfig = { damping: 25, stiffness: 700 };
+  const springConfig = { damping: 40, stiffness: 200 };
   const springX = useSpring(mouseX, springConfig);
   const springY = useSpring(mouseY, springConfig);
 
@@ -137,8 +143,8 @@ const ImmsersiveGallery = () => {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 20,
+        stiffness: 60,
+        damping: 18,
       },
     },
   };
@@ -197,7 +203,7 @@ const ImmsersiveGallery = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
             className="inline-block"
           >
             <div className="inline-block bg-blue-100 px-4 py-1 rounded-full mb-4">
@@ -211,7 +217,7 @@ const ImmsersiveGallery = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8 }}
             className="mt-6 text-5xl md:text-6xl lg:text-7xl font-serif font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900"
           >
             A Glimpse
@@ -220,7 +226,7 @@ const ImmsersiveGallery = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8 }}
             className="mt-4 text-xl md:text-2xl font-serif text-slate-600 max-w-xl mx-auto"
           >
             Immerse yourself in our world-class facilities and vibrant community
@@ -229,7 +235,7 @@ const ImmsersiveGallery = () => {
           <motion.div
             initial={{ scaleX: 0 }}
             animate={headerInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 1, delay: 0.8 }}
+            // transition={{ duration: 1 }}
             className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-8"
           />
         </motion.div>
@@ -238,7 +244,7 @@ const ImmsersiveGallery = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={galleryInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          // transition={{ duration: 0.6 }}
           className="flex flex-wrap justify-center gap-2 mb-12"
         >
           {categories.map((category) => (
@@ -272,7 +278,7 @@ const ImmsersiveGallery = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
         >
           <AnimatePresence>
-            {filteredItems.map((item, index) => (
+            {filteredItems.map((item) => (
               <motion.div
                 key={item.id}
                 variants={itemVariants}
@@ -280,16 +286,6 @@ const ImmsersiveGallery = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                transition={{
-                  type: "spring",
-                  damping: 20,
-                  stiffness: 100,
-                  delay: index * 0.05,
-                }}
-                whileHover={{
-                  y: -10,
-                  transition: { duration: 0.3 },
-                }}
                 className="group relative overflow-hidden rounded-xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500"
                 onMouseEnter={() => setCursorHovered(true)}
                 onMouseLeave={() => setCursorHovered(false)}
@@ -350,7 +346,7 @@ const ImmsersiveGallery = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              // transition={{ type: "spring" }}
               className="relative max-w-5xl w-full max-h-[90vh] overflow-hidden rounded-xl"
               onClick={(e) => e.stopPropagation()}
             >

@@ -8,13 +8,11 @@ import {
   Mail,
   Phone,
   MapPin,
-  ArrowRight,
   Facebook,
   Instagram,
   Linkedin,
 } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
-
 
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -86,36 +84,25 @@ const Footer = () => {
               <li>
                 <Link
                   to="#"
-                  className="text-slate-600 hover:text-primary transition-colors flex items-center group"
+                  className="text-slate-600 hover:text-blue-500 transition-colors flex items-center group"
                 >
-                  <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-1" />
                   <span>Admissions</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="#"
-                  className="text-slate-600 hover:text-primary transition-colors flex items-center group"
+                  className="text-slate-600 hover:text-blue-500 transition-colors flex items-center group"
                 >
-                  <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-1" />
                   <span>Download Prospectus</span>
                 </Link>
               </li>
+
               <li>
                 <Link
                   to="#"
-                  className="text-slate-600 hover:text-primary transition-colors flex items-center group"
+                  className="text-slate-600 hover:text-blue-500 transition-colors flex items-center group"
                 >
-                  <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-1" />
-                  <span>Downloadable Files</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#"
-                  className="text-slate-600 hover:text-primary transition-colors flex items-center group"
-                >
-                  <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-1" />
                   <span>FAQ's</span>
                 </Link>
               </li>

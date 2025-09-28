@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,11 +36,18 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link
           to="/"
-          className={`text-2xl font-bold text-slate-900 ${
+          className={`text-2xl font-bold text-slate-900 flex items-center gap-2 ${
             scrolled ? "text-slate-700" : "text-white"
           }`}
         >
-          Riser School
+          <img
+            src={logo}
+            alt={"logo"}
+            className="w-9 h-9 flex items-center justify-center"
+          />
+          <span className={`${!scrolled ? "text-slate-700" : "text-slate-900"}`}>
+            Riser School
+          </span>
         </Link>
 
         <button

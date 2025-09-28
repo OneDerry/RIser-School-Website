@@ -80,7 +80,7 @@ export const Hero = () => {
               className=""
             >
               <div className="grid grid-cols-2 gap-4 items-center">
-                <Link to="/login">
+                <Link to="/enroll">
                   <button
                     // size="lg"
                     className="bg-blue-800 hover:bg-blue-700 border-blue-700 border w-full text-white text-sm group flex items-center justify-center p-3 rounded-md"

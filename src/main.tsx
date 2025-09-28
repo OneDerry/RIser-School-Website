@@ -5,14 +5,17 @@ import { Provider } from "react-redux";
 import { Toaster } from "sonner";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { store } from "./redux/Store";
-import appRouter from "./config/Routes";
+import appRouter from "./config/routes";
+import ErrorBoundary from "./ui/components/error_boundary";
 
 const routes = createBrowserRouter(appRouter());
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={routes} />
-      <Toaster position="top-right" richColors closeButton />
+      <ErrorBoundary>
+        <RouterProvider router={routes} />
+        <Toaster position="top-right" richColors closeButton />
+      </ErrorBoundary>
     </Provider>
   </React.StrictMode>
 );

@@ -1,4 +1,4 @@
-import Applayout from "../../appLayout/Applayout";
+import Applayout from "../../app_layout/Applayout";
 import Adisplay from "./Adisplay";
 
 export default function Appearance() {

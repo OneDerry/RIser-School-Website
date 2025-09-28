@@ -1,6 +1,8 @@
-import {  ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.jpg";
+import background from "../assets/schoolBuilding.jpg";
 
 const EnrollmentPage: React.FC = () => {
   const navigate = useNavigate();
@@ -10,7 +12,7 @@ const EnrollmentPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[url('./assets/logo.jpg')] bg-contain bg-no-repeat bg-center px-6 py-12 mt-6">
+    <div style={{ backgroundImage: `url(${background})` }} className="min-h-screen bg-cover bg-no-repeat bg-center px-6 py-12">
       <div>
         <Link
           to="/"
@@ -21,9 +23,8 @@ const EnrollmentPage: React.FC = () => {
         </Link>
       </div>
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-8">
-        <h1 className="text-3xl font-bold text-blue-700 mb-6">
-          School Fee Payment & Enrollment
-        </h1>
+        <img src={logo} alt="" className="h-12 w-12 text-center" />
+        <h1 className="text-3xl font-bold text-blue-700 mb-6">Enrollment</h1>
 
         <p className="text-gray-700 mb-4">
           Welcome to the official School Fee Payment & Enrollment portal! We are

@@ -1,4 +1,4 @@
-import Applayout from "../../appLayout/Applayout";
+import Applayout from "../../app_layout/Applayout";
 import Udisplay from "./Udisplay";
 
 export default function Users() {
