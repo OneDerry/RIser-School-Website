@@ -110,7 +110,7 @@ const ImmsersiveGallery = () => {
         galleryItems.filter((item) => item.category === activeCategory)
       );
     }
-  }, [activeCategory]);
+  }, [activeCategory, galleryItems]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
