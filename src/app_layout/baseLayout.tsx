@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import Footer from "../website/Footer";
 
-const Footer = lazy(() => import("../website/footer"));
 const Navbar = lazy(() => import("../website/navbar"));
 
 const ComponentLoader = () => (

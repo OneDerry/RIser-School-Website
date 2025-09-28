@@ -5,8 +5,8 @@ import { Provider } from "react-redux";
 import { Toaster } from "sonner";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { store } from "./redux/Store";
-import appRouter from "./config/routes";
 import ErrorBoundary from "./ui/components/error_boundary";
+import appRouter from "./config/Routes";
 
 const routes = createBrowserRouter(appRouter());
 ReactDOM.createRoot(document.getElementById("root")!).render(

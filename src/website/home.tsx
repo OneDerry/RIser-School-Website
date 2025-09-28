@@ -1,11 +1,11 @@
 import { useEffect, useState, lazy, Suspense } from "react";
 
 import { Hero } from "./landing";
+import AboutUs from "./about-us";
+import Facilities from "./Facilities";
+import Admissions from "./Admissions";
+import ImmsersiveGallery from "./Cards";
 
-const Cards = lazy(() => import("./cards"));
-const AboutUs = lazy(() => import("./about-us"));
-const Admissions = lazy(() => import("./admissions"));
-const Facilities = lazy(() => import("./facilities"));
 const WhatOthersThink = lazy(() => import("./what-others-think"));
 
 const SectionLoader = () => (
@@ -13,7 +13,6 @@ const SectionLoader = () => (
     <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
   </div>
 );
-
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,19 +36,19 @@ export default function Home() {
       <Suspense fallback={<SectionLoader />}>
         <AboutUs />
       </Suspense>
-      
+
       <Suspense fallback={<SectionLoader />}>
         <Facilities />
       </Suspense>
-      
+
       <Suspense fallback={<SectionLoader />}>
         <Admissions />
       </Suspense>
-      
+
       <Suspense fallback={<SectionLoader />}>
-        <Cards />
+        <ImmsersiveGallery />
       </Suspense>
-      
+
       <Suspense fallback={<SectionLoader />}>
         <WhatOthersThink />
       </Suspense>
