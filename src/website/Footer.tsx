@@ -135,25 +135,25 @@ const Footer = () => {
             </ul>
             <div className="flex space-x-4 pt-2">
               <Link
-                to="#"
+                to="https://web.facebook.com/RiserAdmin/?_rdc=1&_rdr#"
                 className="text-slate-500 hover:text-primary transition-colors"
               >
                 <Facebook size={18} />
               </Link>
               <Link
-                to="#"
+                to="https://x.com/riserschool"
                 className="text-slate-500 hover:text-primary transition-colors"
               >
                 <FaXTwitter size={18} />
               </Link>
               <Link
-                to="#"
+                to="https://instagram.com/riserschool"
                 className="text-slate-500 hover:text-primary transition-colors"
               >
                 <Instagram size={18} />
               </Link>
               <Link
-                to="#"
+                to="https://linkedin.com/company/riserschool"
                 className="text-slate-500 hover:text-primary transition-colors"
               >
                 <Linkedin size={18} />

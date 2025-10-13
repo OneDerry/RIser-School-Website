@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logoMain.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,7 +45,7 @@ const Navbar = () => {
             alt={"logo"}
             className="w-9 h-9 flex items-center justify-center"
           />
-          <span className={`${!scrolled ? "text-slate-700" : "text-slate-900"}`}>
+          <span className={`${!scrolled ? "text-white" : "text-slate-900"}`}>
             Riser School
           </span>
         </Link>
