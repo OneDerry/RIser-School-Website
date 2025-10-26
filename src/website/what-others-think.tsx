@@ -37,7 +37,7 @@ export default function WhatOthersThink() {
     const steps = 60;
     const stepTime = duration / steps;
 
-    const targetValues = { years: 10, students: 88, active: 14, customers: 93 };
+    const targetValues = { years: 10, students: 138, active: 23, customers: 93 };
     let currentStep = 0;
 
     const interval = setInterval(() => {
@@ -77,7 +77,7 @@ export default function WhatOthersThink() {
     {
       id: 3,
       amount: counts.active,
-      title: "Active Projects",
+      title: "Active Staff",
       icon: <Users className="h-6 w-6 text-primary" />,
     },
     {

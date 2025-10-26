@@ -22,7 +22,7 @@ export default function Login() {
         <LoginForm />
       </div>
 
-      <div className="col-span-3 hidden h-screen bg-blue-700 bg-[url('../../assets/logo.png')] bg-cover bg-center bg-no-repeat lg:block"></div>
+      <div className="col-span-3 hidden h-screen bg-blue-700 bg-[url('../../assets/logo.jpg')] bg-cover bg-center bg-no-repeat lg:block"></div>
     </section>
   );
 }
