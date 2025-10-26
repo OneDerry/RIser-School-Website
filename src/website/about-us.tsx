@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "../assets/schoolbuilding.jpg";
 import { motion } from "framer-motion";

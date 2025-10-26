@@ -9,7 +9,7 @@ import { format } from "date-fns";
 import { formSchema } from "../app/components/validations";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import background from "../assets/schoolBuilding.jpg";
+import background from "../assets/schoolbuilding.jpg";
 
 
 
